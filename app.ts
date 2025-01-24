@@ -1,17 +1,19 @@
 /*
  * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
  * SPDX-License-Identifier: MIT
+ * Test project by tanzimul
  */
 
-async function app () {
-  const { default: validateDependencies } = await import('./lib/startup/validateDependenciesBasic')
-  await validateDependencies()
+async function app() {
+  const { default: validateDependencies } = await import(
+    "./lib/startup/validateDependenciesBasic"
+  );
+  await validateDependencies();
 
-  const server = await import('./server')
-  await server.start()
+  const server = await import("./server");
+  await server.start();
 }
 
-app()
-  .catch(err => {
-    throw err
-  })
+app().catch((err) => {
+  throw err;
+});
